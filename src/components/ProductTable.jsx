@@ -131,11 +131,11 @@ function ProductTable() {
           <table className={`table table-striped ${styles.table}`}>
             <thead>
               <tr>
-                <th>S/No</th>
-                <th>Items</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Action</th>
+                <th className={styles.head}>S/No</th>
+                <th className={styles.head}>Items</th>
+                <th className={styles.head}>Description</th>
+                <th className={styles.head}>Price</th>
+                <th className={styles.head}>Action</th>
               </tr>
             </thead>
             <tbody>
