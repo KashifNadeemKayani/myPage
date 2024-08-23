@@ -120,7 +120,7 @@ function ProductTable() {
   const generateWhatsAppLink = (name, price) => {
     const numericPrice = extractPrice(price);
     const message = `I want to buy ${name} with price ${numericPrice} PKR`;
-    return `https://wa.me/#?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/923105688796?text=${encodeURIComponent(message)}`;
   };
 
   return (
