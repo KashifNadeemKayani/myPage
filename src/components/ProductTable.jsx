@@ -134,7 +134,7 @@ function ProductTable() {
                 <th>S/No</th>
                 <th>Items</th>
                 <th>Description</th>
-                <th>Price in Rupees</th>
+                <th>Price</th>
                 <th>Action</th>
               </tr>
             </thead>
