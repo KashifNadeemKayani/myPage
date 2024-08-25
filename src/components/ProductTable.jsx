@@ -161,7 +161,7 @@ const ProductTable = () => {
                       rel="noopener noreferrer"
                       className={styles.btn} // Style for the Picture button
                     >
-                      View Picture
+                      Picture
                     </a>
                   </td>
                 </tr>
