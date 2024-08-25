@@ -148,7 +148,7 @@ const ProductTable = () => {
                     <a
                       href={generateWhatsAppLink(item.name, item.price)}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      // rel="noopener noreferrer"
                       className={styles.btn}
                     >
                       Buy
