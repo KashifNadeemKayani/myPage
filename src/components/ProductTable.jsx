@@ -127,6 +127,7 @@ const ProductTable = () => {
         <div key={index}>
           <h2 className={styles.heading}>{category.category}</h2>
           <table className={`table table-striped ${styles.table}`}>
+            
             <thead>
               <tr>
                 <th className={styles.head}>S/No</th>
@@ -137,7 +138,9 @@ const ProductTable = () => {
                 <th className={styles.head}>Picture</th> {/* New column for Picture */}
               </tr>
             </thead>
+            
             <tbody>
+              
               {category.items.map(item => (
                 <tr key={item.id}>
                   <td>{item.id}</td>
@@ -168,6 +171,9 @@ const ProductTable = () => {
               ))}
             </tbody>
           </table>
+          <br />
+          <hr style={{ border: '2px solid black', marginBottom: '20px' }} />
+<br />
         </div>
       ))}
     </div>
