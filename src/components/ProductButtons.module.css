@@ -3,7 +3,9 @@
   flex-wrap: wrap;
   /* justify-content: center; */
   margin-bottom: 20px; /* Adjust the spacing between the buttons and the product table */
-  padding: 0 15px; /* Adjust padding to align with the product table */
+  padding-left: 15vw; /* Adjust padding to align with the product table */
+  padding-right: 15vw; 
+
 }
 
 .customButton {
@@ -13,6 +15,7 @@
   margin: 10px; /* Add margin for spacing between buttons */
   border-radius: 5px; /* Add a border radius for rounded corners */
   border: none;
+  font-weight: bolder;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
