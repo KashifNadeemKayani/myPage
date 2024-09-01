@@ -3,9 +3,11 @@
   flex-wrap: wrap;
   /* justify-content: center; */
   margin-bottom: 20px; /* Adjust the spacing between the buttons and the product table */
-  padding-left: 15vw; /* Adjust padding to align with the product table */
-  padding-right: 15vw; 
-
+  /* padding-left: 15vw; Adjust padding to align with the product table */
+  /* padding-right: 15vw;  */
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .customButton {

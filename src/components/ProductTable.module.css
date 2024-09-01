@@ -3,18 +3,14 @@
   padding: 20px;
   margin: 0 auto;
   max-width: 1200px;
-}
-
-.table-container {
-  width: 100%;
-  overflow-x: auto; /* Allow horizontal scrolling on small screens */
+  overflow-x: auto; /* Allow horizontal scrolling */
 }
 
 /* Table Styles */
 .table {
   width: 100%;
   border-collapse: collapse; /* Ensure that borders between cells are merged */
-  table-layout: auto; /* Let the table adjust column widths automatically */
+  table-layout: fixed; /* Set table-layout to fixed */
   text-align: left;
 }
 
@@ -22,6 +18,7 @@
   padding: 10px;
   vertical-align: middle;
   word-wrap: break-word; /* Ensures long content wraps within the cell */
+  white-space: nowrap; /* Prevent text from wrapping, causing overflow */
 }
 
 .table th {
@@ -75,5 +72,9 @@
 
   .table {
     table-layout: auto; /* Let the table adjust column widths automatically */
+  }
+
+  .tableContainer {
+    overflow-x: scroll; /* Enable scrolling for mobile devices */
   }
 }
