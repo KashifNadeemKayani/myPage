@@ -9,11 +9,11 @@ import styles from './App.module.css';
 
 function App() {
   return (
-    <div className={styles.container}>
+    <div >
       <Header />
       
     {/* <ProductButtons /> */}
-      <div className="row">
+      <div className={`row ${styles.container}`}>
   <div className="col-12">
 
     <ProductTable />
