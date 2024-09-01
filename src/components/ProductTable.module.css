@@ -1,9 +1,9 @@
 /* Container Styles */
 .tableContainer {
-  padding: 10px;
+  padding: 0px;
   margin: 0 auto;
   max-width: 1200px;
-  overflow-x: auto; /* Allow horizontal scrolling if necessary */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Table Styles */
@@ -15,10 +15,9 @@
 
 /* Table Header and Cells */
 .table th, .table td {
-  padding: 8px;
+  padding: 6px; /* Reduced padding for smaller screens */
   vertical-align: middle;
   word-wrap: break-word;
-  white-space: nowrap; /* Prevent text from wrapping */
 }
 
 /* Ensure that table content wraps correctly */
@@ -26,16 +25,16 @@
   white-space: normal; /* Allow text to wrap */
 }
 
-/* Ensure button sizes are consistent */
+/* Ensure button sizes are compact */
 .btn {
   display: inline-block;
   text-align: center;
-  padding: 5px 8px;
+  padding: 4px 6px; /* Further reduced padding to minimize button size */
   background-color: #28a745;
   color: #fff;
   border-radius: 5px;
   text-decoration: none;
-  font-size: 14px; /* Adjust button text size */
+  font-size: 12px; /* Slightly smaller font for buttons */
 }
 
 .btn:hover {
@@ -45,10 +44,10 @@
 /* Heading Styles */
 .heading {
   background-color: hsl(155, 68%, 59%);
-  padding: 10px 20px;
-  margin-bottom: 20px;
+  padding: 10px 15px; /* Reduced padding for better fit */
+  margin: 10px ; /* Reduced margin */
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem; /* Slightly smaller font size */
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(55, 58, 29, 0.99);
 }
@@ -56,34 +55,32 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
   .table th, .table td {
-    font-size: 14px;
-    padding: 6px;
-    white-space: normal; /* Allow text to wrap on smaller screens */
+    font-size: 12px; /* Smaller font size for mobile */
+    padding: 4px; /* Further reduced padding */
   }
 
   .table th:nth-child(3), .table td:nth-child(3) {
-    width: 40%; /* Reduce width for the Description column */
+    width: 35%; /* Adjusted width for the Description column */
   }
 
   .table th:nth-child(4), .table td:nth-child(4) {
-    width: 25%; /* Adjust width for the Price column */
+    width: 20%; /* Adjusted width for the Price column */
   }
 
   .table th:nth-child(5), .table td:nth-child(5) {
-    width: 15%; /* Adjust width for the Action column */
+    width: 15%; /* Adjusted width for the Action column */
   }
 
   .table th:nth-child(6), .table td:nth-child(6) {
-    width: 20%; /* Adjust width for the Picture column */
+    width: 15%; /* Adjusted width for the Picture column */
   }
 
   .tableContainer {
-    overflow-x: auto; /* Enable horizontal scrolling on smaller screens */
+    overflow-x: hidden; /* Prevent horizontal scrolling on smaller screens */
     padding: 0; /* Remove extra padding */
   }
   
   .table {
-    display: table; /* Ensure table displays correctly on mobile */
-    width: 100%; /* Ensure full width */
+    width: 100%; /* Ensure full width without horizontal scrolling */
   }
 }
