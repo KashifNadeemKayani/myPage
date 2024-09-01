@@ -1,7 +1,7 @@
 .buttonContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: center; */
   margin-bottom: 20px; /* Adjust the spacing between the buttons and the product table */
   padding: 0 15px; /* Adjust padding to align with the product table */
 }
