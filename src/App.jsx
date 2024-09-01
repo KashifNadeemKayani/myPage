@@ -12,7 +12,7 @@ function App() {
     <div className={styles.container}>
       <Header />
       
-    <ProductButtons />
+    {/* <ProductButtons /> */}
       <div className="row">
   <div className="col-12">
 
