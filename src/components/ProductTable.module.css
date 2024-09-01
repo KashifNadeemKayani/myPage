@@ -1,8 +1,8 @@
 /* Container Styles */
 .tableContainer {
-  padding: 0px;
+  padding: 0 10vw ;
   margin: 0 auto;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
