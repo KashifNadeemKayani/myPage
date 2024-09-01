@@ -1,0 +1,30 @@
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px; /* Adjust the spacing between the buttons and the product table */
+  padding: 0 15px; /* Adjust padding to align with the product table */
+}
+
+.customButton {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px; /* Adjust the padding to match the product table rows */
+  margin: 10px; /* Add margin for spacing between buttons */
+  border-radius: 5px; /* Add a border radius for rounded corners */
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.customButton:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.customButton:focus {
+  outline: none; /* Remove focus outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add focus shadow */
+}
