@@ -1,6 +1,11 @@
 
 
+/* Ensure the body takes full width, height, and has no overflow */
 html, body {
-  overflow-x: hidden; 
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+th, td {
+  text-align: left;
+  border: 1px solid #ddd;
+}
