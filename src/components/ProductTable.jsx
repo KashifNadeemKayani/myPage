@@ -467,3 +467,6 @@ const ProductTable = ({ selectedCategory }) => {
 };
 
 export default ProductTable;
+
+
+
