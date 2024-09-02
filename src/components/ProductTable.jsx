@@ -187,6 +187,106 @@
 
 // export default ProductTable;
 
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import styles from './ProductTable.module.css';
+
+// const ProductTable = () => {
+//   // Initialize the selectedCategory state with the first category's ID
+//   const [selectedCategory, setSelectedCategory] = useState(products[0].id);
+
+//   // Function to handle category click
+//   const handleCategoryClick = (categoryId) => {
+//     setSelectedCategory(categoryId);
+//   };
+
+  // Define the generateWhatsAppLink function
+  const generateWhatsAppLink = (name, price) => {
+    const numericPrice = price.split(' ')[0]; // Extract numeric price
+    const message = `I want to buy ${name} with price ${numericPrice} PKR`;
+    return `https://wa.me/923183098174?text=${encodeURIComponent(message)}`;
+  };
+
+//   return (
+//     <div>
+//       {/* Category Buttons */}
+//       <div className={styles.buttonContainer}>
+//         {products.map((category, index) => (
+//           <button
+//             key={index}
+//             onClick={() => handleCategoryClick(category.id)}
+//             className={styles.customButton}
+//           >
+//             {category.category}
+//           </button>
+//         ))}
+//       </div>
+
+//       <div className={styles.tableContainer}>
+//         {products
+//           .filter(category => !selectedCategory || category.id === selectedCategory)
+//           .map((category, index) => (
+//             <div key={index} id={category.id}>
+//               <h2 className={styles.heading}>{category.category}</h2>
+//               <table className={`table table-striped ${styles.table}`}>
+//                 <thead>
+//                   <tr>
+//                     <th className={styles.head}>S/No</th>
+//                     <th className={styles.head}>Items</th>
+//                     <th className={styles.head}>Description</th>
+//                     <th className={styles.head}>Price</th>
+//                     <th className={styles.head}>Action</th>
+//                     <th className={styles.head}>Picture</th>
+//                   </tr>
+//                 </thead>
+//                 <tbody>
+//                   {category.items.map(item => (
+//                     <tr key={item.id}>
+//                       <td>{item.id}</td>
+//                       <td>{item.name}</td>
+//                       <td>{item.description}</td>
+//                       <td>{item.price}</td>
+//                       <td>
+//                         <a
+//                           href={generateWhatsAppLink(item.name, item.price)}
+//                           target="_blank"
+//                           className={styles.btn}
+//                         >
+//                           Buy
+//                         </a>
+//                       </td>
+//                       <td>
+//                         <a
+//                           href={item.pictureUrl}
+//                           target="_blank"
+//                           rel="noopener noreferrer"
+//                           className={styles.btn}
+//                         >
+//                           Picture
+//                         </a>
+//                       </td>
+//                     </tr>
+//                   ))}
+//                 </tbody>
+//               </table>
+//               {/* <hr style={{ border: '100px solid white', marginBottom: '20px' }} /> */}
+//             </div>
+//           ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ProductTable;
+
+
+
+
 import React, { useState } from 'react';
 import styles from './ProductTable.module.css';
 const products = [
@@ -308,88 +408,60 @@ const products = [
     ],
   },
 ];
-const ProductTable = () => {
-  // Initialize the selectedCategory state with the first category's ID
-  const [selectedCategory, setSelectedCategory] = useState(products[0].id);
-
-  // Function to handle category click
-  const handleCategoryClick = (categoryId) => {
-    setSelectedCategory(categoryId);
-  };
-
-  // Define the generateWhatsAppLink function
-  const generateWhatsAppLink = (name, price) => {
-    const numericPrice = price.split(' ')[0]; // Extract numeric price
-    const message = `I want to buy ${name} with price ${numericPrice} PKR`;
-    return `https://wa.me/923183098174?text=${encodeURIComponent(message)}`;
-  };
+const ProductTable = ({ selectedCategory }) => {
+  const filteredProducts = selectedCategory === 'all'
+    ? products
+    : products.filter(category => category.id === selectedCategory);
 
   return (
-    <div>
-      {/* Category Buttons */}
-      <div className={styles.buttonContainer}>
-        {products.map((category, index) => (
-          <button
-            key={index}
-            onClick={() => handleCategoryClick(category.id)}
-            className={styles.customButton}
-          >
-            {category.category}
-          </button>
-        ))}
-      </div>
-
-      <div className={styles.tableContainer}>
-        {products
-          .filter(category => !selectedCategory || category.id === selectedCategory)
-          .map((category, index) => (
-            <div key={index} id={category.id}>
-              <h2 className={styles.heading}>{category.category}</h2>
-              <table className={`table table-striped ${styles.table}`}>
-                <thead>
-                  <tr>
-                    <th className={styles.head}>S/No</th>
-                    <th className={styles.head}>Items</th>
-                    <th className={styles.head}>Description</th>
-                    <th className={styles.head}>Price</th>
-                    <th className={styles.head}>Action</th>
-                    <th className={styles.head}>Picture</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {category.items.map(item => (
-                    <tr key={item.id}>
-                      <td>{item.id}</td>
-                      <td>{item.name}</td>
-                      <td>{item.description}</td>
-                      <td>{item.price}</td>
-                      <td>
-                        <a
-                          href={generateWhatsAppLink(item.name, item.price)}
-                          target="_blank"
-                          className={styles.btn}
-                        >
-                          Buy
-                        </a>
-                      </td>
-                      <td>
-                        <a
-                          href={item.pictureUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={styles.btn}
-                        >
-                          Picture
-                        </a>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              {/* <hr style={{ border: '100px solid white', marginBottom: '20px' }} /> */}
-            </div>
-          ))}
-      </div>
+    <div className={styles.tableContainer}>
+      {filteredProducts.map((category, index) => (
+        <div key={index} id={category.id}>
+          <h2 className={styles.heading}>{category.category}</h2>
+          <table className={`table table-striped ${styles.table}`}>
+            <thead>
+              <tr>
+                <th className={styles.head}>S/No</th>
+                <th className={styles.head}>Items</th>
+                <th className={styles.head}>Description</th>
+                <th className={styles.head}>Price</th>
+                <th className={styles.head}>Action</th>
+                <th className={styles.head}>Picture</th>
+              </tr>
+            </thead>
+            <tbody>
+              {category.items.map(item => (
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.description}</td>
+                  <td>{item.price}</td>
+                  <td>
+                    <a
+                      href={generateWhatsAppLink(item.name, item.price)}
+                      target="_blank"
+                      className={styles.btn}
+                    >
+                      Buy
+                    </a>
+                  </td>
+                  <td>
+                    <a
+                      href={item.pictureUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.btn}
+                    >
+                      Picture
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <hr style={{ border: '2px solid black', marginBottom: '20px' }} />
+        </div>
+      ))}
     </div>
   );
 };

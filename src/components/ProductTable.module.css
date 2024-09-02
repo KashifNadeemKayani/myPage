@@ -2,6 +2,7 @@
 .tableContainer {
   padding: 0 10vw ;
   margin: 0 auto;
+  
   /* max-width: 1200px; */
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
@@ -13,6 +14,7 @@
   justify-content: flex-start; /* Align items to the start */
   padding: 10px 0; /* Adjust padding */
   margin: 0 auto;
+  
   max-width: 100%; /* Ensure container takes full width */
   overflow-x: auto; /* Allow horizontal scrolling */
   white-space: nowrap; /* Prevent wrapping of text inside buttons */
@@ -112,4 +114,25 @@
   .table {
     width: 100%; /* Ensure full width without horizontal scrolling */
   }
+}
+
+/* overflow-y: hidden; */.navbar {
+  background-color: #f8f9fa;
+  padding: 10px;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.sticky {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for effect */
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

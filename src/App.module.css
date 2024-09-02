@@ -8,8 +8,9 @@ html, body {
 }
 .container {
   display: flex;
+  overflow-y: hidden;
   flex-direction: column;
-  min-height: 68vh; /* Ensure the container takes at least the full height of the viewport */
+  min-height: 70.5vh; /* Ensure the container takes at least the full height of the viewport */
 }
 th, td {
   text-align: left;
