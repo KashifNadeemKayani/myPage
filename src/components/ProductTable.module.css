@@ -116,23 +116,4 @@
   }
 }
 
-/* overflow-y: hidden; */.navbar {
-  background-color: #f8f9fa;
-  padding: 10px;
-  z-index: 1000; /* Ensure it stays on top */
-}
-
-.sticky {
-  position: -webkit-sticky; /* For Safari */
-  position: sticky;
-  top: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for effect */
-}
-
-.fixed {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+/* overflow-y: hidden; */

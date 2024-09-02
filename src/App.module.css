@@ -5,13 +5,23 @@ html, body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
   padding: 0;
   margin: 0;
-}
-.container {
+}.container {
   display: flex;
-  overflow-y: hidden;
   flex-direction: column;
-  min-height: 70.5vh; /* Ensure the container takes at least the full height of the viewport */
+  min-height: 100vh; /* Ensure the container takes at least the full height of the viewport */
 }
+
+.content {
+  flex: 1; /* This makes the content area grow to fill the available space */
+}
+
+.footer {
+  background-color: #f8f9fa;
+  /* padding: 10px; */
+  text-align: center;
+  /* Any other styling you want for the footer */
+}
+
 th, td {
   text-align: left;
   border: 1px solid #ddd;

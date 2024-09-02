@@ -12,35 +12,26 @@ const App = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   return (
-    <div >
-      <Header />
-      
-      <div className={`row ${styles.container}`}>
-  <div className="col-12">
+ 
+<div className={styles.container}>
+      <Header/>
+
+      <main className={styles.content}>
+      <div className="col-12">
   <div>
       <ProductButtons onSelectCategory={setSelectedCategory} />
       <ProductTable selectedCategory={selectedCategory} />
     </div>
   </div>
-</div>
+      </main>
 
-      <Footer />
+      <footer className={styles.footer}>
+           <Footer></Footer> </footer>
     </div>
-  );
+
+    
+   );
 }
 
 export default App;
 
-
-// import React, { useState } from 'react';
-// import ProductButtons from './ProductButtons';
-// import ProductTable from './ProductTable';
-
-// const App = () => {
-//   const [selectedCategory, setSelectedCategory] = useState('all');
-
-  // return (
-  // );
-// };
-
-// export default App;

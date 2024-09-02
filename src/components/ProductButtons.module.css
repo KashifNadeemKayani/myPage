@@ -7,6 +7,11 @@
   max-width: 100%; /* Ensure container takes full width */
   overflow-x: auto; /* Allow horizontal scrolling */
   white-space: nowrap; /* Prevent wrapping of text inside buttons */
+  position: -webkit-sticky; /* For Safari */
+  position: sticky; /* Stick to the top */
+  top: 0; /* Position at the top of the viewport */
+  background-color: white; /* Add background color to avoid transparency */
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
 .customButton {
@@ -45,6 +50,7 @@
     padding: 8px 15px; /* Adjust padding for a more compact design */
   }
 }
+
 .activeButton {
   background-color: green !important;
   border-color: green !important;
