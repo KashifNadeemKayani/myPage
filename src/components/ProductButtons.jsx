@@ -153,23 +153,23 @@ const ProductButtons = ({ onSelectCategory }) => {
     onSelectCategory(id);
   };
 
-  const handlers = useSwipeable({
-    onSwipedLeft: () => {
-      if (currentIndex < categories.length - 1) {
-        handleCategoryClick(categories[currentIndex + 1].id, currentIndex + 1);
-      }
-    },
-    onSwipedRight: () => {
-      if (currentIndex > 0) {
-        handleCategoryClick(categories[currentIndex - 1].id, currentIndex - 1);
-      }
-    },
-    // preventScrollOnSwipe: true, // Prevents scrolling when swiping left or right
-    trackMouse: true, // Allows swipe gestures with a mouse, useful for testing on desktop
-  });
+  // const handlers = useSwipeable({
+  //   onSwipedLeft: () => {
+  //     if (currentIndex < categories.length - 1) {
+  //       handleCategoryClick(categories[currentIndex + 1].id, currentIndex + 1);
+  //     }
+  //   },
+  //   onSwipedRight: () => {
+  //     if (currentIndex > 0) {
+  //       handleCategoryClick(categories[currentIndex - 1].id, currentIndex - 1);
+  //     }
+  //   },
+  //   // preventScrollOnSwipe: true, // Prevents scrolling when swiping left or right
+  //   trackMouse: true, // Allows swipe gestures with a mouse, useful for testing on desktop
+  // });
 
   return (
-    <div {...handlers} className={styles.buttonContainer}>
+    <div  className={styles.buttonContainer}>
       {categories.map((category, index) => (
         <button
           key={index}

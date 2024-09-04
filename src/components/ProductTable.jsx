@@ -289,15 +289,21 @@
 
 import React, { useState } from 'react';
 import styles from './ProductTable.module.css';
+// import pic from './whatsapp.png';
+import ringrough from './Pictures/RingRoughRegister.jpg';
+import ringrough180 from './Pictures/RingRoughRegister2.jpg';
+import NonRingRoughRegister150 from './Pictures/NonRingRoughRegister150.jpg';
+import NonRingRoughRegister210 from './Pictures/NonRingRoughRegister210.jpg';
+
 const products = [
   {
     category: 'Rough Pages Registers',
     id: 'rough-pages-registers',
     items: [
-      { id: '1', name: 'Ring Register', description: '~180 pages', price: '350', pictureUrl: 'https://example.com/images/ring_register_180.jpg' },
-      { id: '2', name: 'Ring Register', description: '~100 pages', price: '220', pictureUrl: 'https://example.com/images/ring_register_100.jpg' },
-      { id: '3', name: 'Non-Ring Register', description: '~210 pages', price: '350 (Out Of Stock)', pictureUrl: 'https://example.com/images/non_ring_register_210.jpg' },
-      { id: '4', name: 'Non-Ring Register', description: '~150 pages', price: '250', pictureUrl: 'https://example.com/images/non_ring_register_150.jpg' },
+      { id: '1', name: 'Ring Register', description: '~100 pages', price: '230', pictureUrl: [ringrough] },
+      { id: '2', name: 'Ring Register', description: '~180 pages', price: '360', pictureUrl:[ringrough180] },
+      { id: '3', name: 'Non-Ring Register', description: '~150 pages', price: '250', pictureUrl:[NonRingRoughRegister150] },
+      { id: '4', name: 'Non-Ring Register', description: '~210 pages', price: '360', pictureUrl: [NonRingRoughRegister210 ]},
     ],
   },
   {
@@ -408,6 +414,8 @@ const products = [
     ],
   },
 ];
+
+
 const ProductTable = ({ selectedCategory }) => {
   const filteredProducts = selectedCategory === 'all'
     ? products
