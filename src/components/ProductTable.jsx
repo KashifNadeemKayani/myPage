@@ -34,7 +34,7 @@ const products = [
     category: 'Neat Pages Registers',
     id: 'neat-pages-registers',
     items: [
-      { id: '0', name: 'Ring Register', description: '5 Portions/Subjects', price: '400', pictureUrl: [P5]},
+      { id: '1', name: 'Ring Register', description: '5 Portions/Subjects', price: '400', pictureUrl: [P5]},
       { id: '2', name: 'Ring Register', description: '6 Portions/Subjects', price: '450 ', pictureUrl:[ P6 ],
         // customClass: 'soldClass',
       },
