@@ -117,3 +117,65 @@
 }
 
 /* overflow-y: hidden; */
+/* style.module.css */
+
+.tableContainer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.heading {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.head {
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn {
+  background-color: #28a745; /* Green button */
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.disabledBtn {
+  background-color: #d3d3d3; /* Grey color for disabled button */
+  color: #777; /* Lighter color for disabled text */
+  cursor: not-allowed;
+  font-size: 14px;
+  /* padding: 4px 6px; */
+  text-align: center;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.disabledBtn:hover {
+  background-color: #d3d3d3; /* No change on hover for disabled */
+}
+
+.table th, .table td {
+  padding: 6px;
+  vertical-align: middle;
+  /* word-wrap: break-word; */
+  text-align: center;
+  
+  /* Set equal height for each cell */
+  height: 60px; /* Set desired fixed height for cells */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+

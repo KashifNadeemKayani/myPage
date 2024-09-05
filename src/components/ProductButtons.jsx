@@ -122,11 +122,10 @@
 
 
 // ADDED SCROLLING
-
 import React, { useState } from 'react';
-import { useSwipeable } from 'react-swipeable';
-import styles from './ProductButtons.module.css';
+import styles from './ProductButtons.module.css'; // Importing styles from CSS module
 
+// List of category objects with name and id
 const categories = [
   { name: 'All', id: 'all' },
   { name: 'Rough Pages Registers', id: 'rough-pages-registers' },
@@ -143,14 +142,14 @@ const categories = [
   { name: 'Others', id: 'others' }
 ];
 
+// Main component to render category buttons
 const ProductButtons = ({ onSelectCategory }) => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState('all'); // State for the currently selected category
 
-  const handleCategoryClick = (id, index) => {
-    setSelectedCategory(id);
-    setCurrentIndex(index);
-    onSelectCategory(id);
+  // Handle category selection
+  const handleCategoryClick = (id) => {
+    setSelectedCategory(id); // Set selected category
+    onSelectCategory(id);    // Trigger callback for parent component
   };
 
   // const handlers = useSwipeable({
@@ -167,16 +166,15 @@ const ProductButtons = ({ onSelectCategory }) => {
   //   // preventScrollOnSwipe: true, // Prevents scrolling when swiping left or right
   //   trackMouse: true, // Allows swipe gestures with a mouse, useful for testing on desktop
   // });
-
   return (
-    <div  className={styles.buttonContainer}>
-      {categories.map((category, index) => (
+    <div className={styles.buttonContainer}>
+      {categories.map((category) => (
         <button
-          key={index}
-          onClick={() => handleCategoryClick(category.id, index)}
+          key={category.id} // Use category id as the key for better performance
+          onClick={() => handleCategoryClick(category.id)} // Handle click to select category
           className={`${styles.customButton} ${selectedCategory === category.id ? styles.activeButton : ''}`}
         >
-          {category.name}
+          {category.name} {/* Display category name */}
         </button>
       ))}
     </div>

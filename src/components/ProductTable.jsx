@@ -7,8 +7,8 @@ import NonRingRoughRegister150 from './Pictures/NonRingRoughRegister150.jpg';
 import NonRingRoughRegister210 from './Pictures/NonRingRoughRegister210.jpg';
 import P5 from './Pictures/P5.RingNeatRegister.jpg'
 import P6 from './Pictures/P6.RingNeatRegister.jpg'
-// import P5 from './Pictures/P5.RingNeatRegister.jpg'
-// import P5 from './Pictures/P5.RingNeatRegister.jpg'
+import Calc417 from './Pictures/417.CasioCalculator.jpg'
+import Calc552 from './Pictures/552.CasioCalculator.jpg'
 // import P5 from './Pictures/P5.RingNeatRegister.jpg'
 // import P5 from './Pictures/P5.RingNeatRegister.jpg'
 // import P5 from './Pictures/P5.RingNeatRegister.jpg'
@@ -34,8 +34,10 @@ const products = [
     category: 'Neat Pages Registers',
     id: 'neat-pages-registers',
     items: [
-      { id: '1', name: 'Ring Register', description: '5 Portions/Subjects', price: '400', pictureUrl: P5},
-      { id: '2', name: 'Ring Register', description: '6 Portions/Subjects', price: '450 ', pictureUrl: P6 },
+      { id: '1', name: 'Ring Register', description: '5 Portions/Subjects', price: '400', pictureUrl: [P5]},
+      { id: '2', name: 'Ring Register', description: '6 Portions/Subjects', price: '450 ', pictureUrl:[ P6 ],
+        // customClass: 'soldClass',
+      },
     ],
   },
   {
@@ -109,8 +111,10 @@ const products = [
     id: 'calculators',
     items: [
       { id: '1', name: 'Casio 555 Functions Calculator', description: 'fx-991EX', price: '2500', pictureUrl: 'https://example.com/images/casio_555_calculator.jpg' },
-      { id: '2', name: 'Casio 552 Functions Calculator', description: 'fx-991EX', price: '2400', pictureUrl: 'https://example.com/images/casio_552_calculator.jpg' },
-      { id: '3', name: 'Casio 417 Functions Calculator', description: 'fx-991ES', price: '1650', pictureUrl: 'https://example.com/images/casio_417_calculator.jpg' },
+      { id: '2', name: 'Casio 552 Functions Calculator', description: 'fx-991EX', price: '2400', pictureUrl: [Calc552],
+        customClass: 'soldClass',
+       },
+      { id: '3', name: 'Casio 417 Functions Calculator', description: 'fx-991ES', price: '1650', pictureUrl: [Calc417] },
     ],
   },
   {
@@ -139,23 +143,25 @@ const products = [
   },
 ];
 
-
-
 const ProductTable = ({ selectedCategory }) => {
+  // Filter products based on the selected category
   const filteredProducts = selectedCategory === 'all'
     ? products
     : products.filter(category => category.id === selectedCategory);
 
+  // Generate WhatsApp link based on the item name, price, and custom class
   const generateWhatsAppLink = (name, price, customClass) => {
-    const numericPrice = price.split(' ')[0]; // Extract numeric price
-    const message = `I want to buy ${name} with price ${numericPrice} PKR`;
+    const numericPrice = price.split(' ')[0]; // Extract numeric part of price
+    const message = `I want to buy ${name} with price ${numericPrice} PKR`; // Prepare WhatsApp message
     
     let whatsappNumber = '923183098174'; // Default WhatsApp number
     
+    // Change WhatsApp number if a specific class is matched
     if (customClass === 'specific-class') {
-      whatsappNumber = '923105688796'; // Specific WhatsApp number based on class
+      whatsappNumber = '9231055688796';
     }
 
+    // Return the WhatsApp API link with the message
     return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   };
 
@@ -163,7 +169,10 @@ const ProductTable = ({ selectedCategory }) => {
     <div className={styles.tableContainer}>
       {filteredProducts.map((category, index) => (
         <div key={index} id={category.id}>
+          {/* Category Heading */}
           <h2 className={styles.heading}>{category.category}</h2>
+
+          {/* Product Table */}
           <table className={`table table-striped ${styles.table}`}>
             <thead>
               <tr>
@@ -176,22 +185,36 @@ const ProductTable = ({ selectedCategory }) => {
               </tr>
             </thead>
             <tbody>
+              {/* Loop through category items */}
               {category.items.map(item => (
                 <tr key={item.id}>
-                  <td>{item.id}</td>
-                  <td>{item.name}</td>
-                  <td>{item.description}</td>
-                  <td>{item.price}</td>
+                  <td>{item.id}</td> {/* Item ID */}
+                  <td>{item.name}</td> {/* Item Name */}
+                  <td>{item.description}</td> {/* Item Description */}
+                  <td>{item.price}</td> {/* Item Price */}
                   <td>
-                    <a
-                      href={generateWhatsAppLink(item.name, item.price, item.customClass)}
-                      target="_blank"
-                      className={`${styles.btn} ${item.customClass}`}
-                    >
-                      Buy
-                    </a>
+                    {item.customClass === 'soldClass' ? (
+                      // Disable button if the item is sold
+                      <button
+                        className={`${styles.btn} ${styles.disabledBtn}`}
+                        disabled
+                      >
+                        Sold
+                      </button>
+                    ) : (
+                      // Generate WhatsApp link for buying
+                      <a
+                        href={generateWhatsAppLink(item.name, item.price, item.customClass)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.btn}
+                      >
+                        Buy
+                      </a>
+                    )}
                   </td>
                   <td>
+                    {/* Link to item picture */}
                     <a
                       href={item.pictureUrl}
                       target="_blank"
@@ -205,6 +228,8 @@ const ProductTable = ({ selectedCategory }) => {
               ))}
             </tbody>
           </table>
+
+          {/* Divider between categories */}
           <hr style={{ border: '2px solid black', marginBottom: '20px' }} />
         </div>
       ))}

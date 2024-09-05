@@ -1,12 +1,10 @@
-
-
-/* Ensure the body takes full width, height, and has no overflow */
 html, body {
-  /* overflow-x: hidden; */
-   /* Prevent horizontal scrolling */
   padding: 0;
   margin: 0;
-}.container {
+  /* overflow-x: hidden; */
+}
+
+.container {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Ensure the container takes at least the full height of the viewport */
@@ -18,9 +16,8 @@ html, body {
 
 .footer {
   background-color: #f8f9fa;
-  /* padding: 10px; */
   text-align: center;
-  /* Any other styling you want for the footer */
+  /* Optional: Add padding or other styles as needed */
 }
 
 th, td {
