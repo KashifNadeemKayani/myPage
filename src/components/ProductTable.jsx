@@ -7,6 +7,8 @@ import NonRingRoughRegister150 from './Pictures/NonRingRoughRegister150.jpg';
 import NonRingRoughRegister210 from './Pictures/NonRingRoughRegister210.jpg';
 import P5 from './Pictures/P5.RingNeatRegister.jpg'
 import P6 from './Pictures/P6.RingNeatRegister.jpg'
+import PianoPen from './Pictures/PianoPen.jpg';
+import SignaturePen from './Pictures/SignaturPen.jpg';
 import Calc417 from './Pictures/417.CasioCalculator.jpg'
 import Calc552 from './Pictures/552.CasioCalculator.jpg'
 // import P5 from './Pictures/P5.RingNeatRegister.jpg'
@@ -44,8 +46,8 @@ const products = [
     category: 'Ball/Pointers Pens',
     id: 'ball-pointers-pens',
     items: [
-      { id: '1', name: 'Piano Ball Pen', description: 'Black, Blue, Green, Red', price: '20', pictureUrl: 'https://example.com/images/piano_ball_pen.jpg' },
-      { id: '2', name: 'Signature Ball Pen', description: 'Black, Blue', price: '20', pictureUrl: 'https://example.com/images/signature_ball_pen.jpg' },
+      { id: '1', name: 'Piano Ball Pen', description: 'Black, Red', price: '20', pictureUrl: [PianoPen] },
+      { id: '2', name: 'Signature Ball Pen', description: 'Black, Blue', price: '20', pictureUrl: [SignaturePen] },
       { id: '3', name: 'Dollar Ball Pen', description: 'Black, Blue', price: '30', pictureUrl: 'https://example.com/images/dollar_ball_pen.jpg' },
       { id: '4', name: 'Dollar Pointer', description: 'Blue, Black, Turquoise', price: '30', pictureUrl: 'https://example.com/images/dollar_pointer.jpg' },
       { id: '5', name: 'Dollar Gel Pen', description: 'Blue, Black', price: '70', pictureUrl: 'https://example.com/images/dollar_gel_pen.jpg' },
@@ -158,7 +160,7 @@ const ProductTable = ({ selectedCategory }) => {
     
     // Change WhatsApp number if a specific class is matched
     if (customClass === 'specific-class') {
-      whatsappNumber = '9231055688796';
+      whatsappNumber = '923105688796';
     }
 
     // Return the WhatsApp API link with the message
@@ -193,7 +195,7 @@ const ProductTable = ({ selectedCategory }) => {
                   <td>{item.description}</td> {/* Item Description */}
                   <td>{item.price}</td> {/* Item Price */}
                   <td>
-                    {item.customClass === 'soldClass' ? (
+                    {item.customClass === 'sold' ? (
                       // Disable button if the item is sold
                       <button
                         className={`${styles.btn} ${styles.disabledBtn}`}
