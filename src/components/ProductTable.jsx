@@ -1,19 +1,30 @@
 
 import React, { useState } from 'react';
 import styles from './ProductTable.module.css';
+
+
 import ringrough from './Pictures/100RingRoughRegister.jpg';
 import ringrough180 from './Pictures/RingRoughRegister2.jpg';
 import NonRingRoughRegister150 from './Pictures/NonRingRoughRegister150.jpg';
 import NonRingRoughRegister210 from './Pictures/NonRingRoughRegister210.jpg';
-import P5 from './Pictures/P5.RingNeatRegister.jpg'
-import P6 from './Pictures/P6.RingNeatRegister.jpg'
+import P5 from './Pictures/P5.RingNeatRegister.jpg';
+import P6 from './Pictures/P6.RingNeatRegister.jpg';
 import PianoPen from './Pictures/PianoPen.jpg';
 import SignaturePen from './Pictures/SignaturPen.jpg';
+import DollarPen from './Pictures/DollarBallPen.jpg';
+import DollarPointer from './Pictures/DollarPointer.jpg';
+import DollarGelPen from './Pictures/DollarGelPen.jpg'
+import Dollar10Pointers from './Pictures/10DollarPointers.jpg'
+//paper
+//paper
+//paper
+
+import DollarMarker from './Pictures/DollarMarker.jpg'
+
+
+
 import Calc417 from './Pictures/417.CasioCalculator.jpg'
 import Calc552 from './Pictures/552.CasioCalculator.jpg'
-// import P5 from './Pictures/P5.RingNeatRegister.jpg'
-// import P5 from './Pictures/P5.RingNeatRegister.jpg'
-// import P5 from './Pictures/P5.RingNeatRegister.jpg'
 // import P5 from './Pictures/P5.RingNeatRegister.jpg'
 // import P5 from './Pictures/P5.RingNeatRegister.jpg'
 // import P5 from './Pictures/P5.RingNeatRegister.jpg'
@@ -48,10 +59,10 @@ const products = [
     items: [
       { id: '1', name: 'Piano Ball Pen', description: 'Black, Red', price: '20', pictureUrl: [PianoPen] },
       { id: '2', name: 'Signature Ball Pen', description: 'Black, Blue', price: '20', pictureUrl: [SignaturePen] },
-      { id: '3', name: 'Dollar Ball Pen', description: 'Black, Blue', price: '30', pictureUrl: 'https://example.com/images/dollar_ball_pen.jpg' },
-      { id: '4', name: 'Dollar Pointer', description: 'Blue, Black, Turquoise', price: '30', pictureUrl: 'https://example.com/images/dollar_pointer.jpg' },
-      { id: '5', name: 'Dollar Gel Pen', description: 'Blue, Black', price: '70', pictureUrl: 'https://example.com/images/dollar_gel_pen.jpg' },
-      { id: '6', name: 'Dollar Pointer', description: '10 diff: colors pack', price: '300', pictureUrl: 'https://example.com/images/dollar_pointer_pack.jpg' },
+      { id: '3', name: 'Dollar Ball Pen', description: 'Black, Blue', price: '30', pictureUrl: [DollarPen] },
+      { id: '4', name: 'Dollar Pointer', description: 'Blue, Black, Turquoise', price: '30', pictureUrl: [DollarPointer] },
+      { id: '5', name: 'Dollar Gel Pen', description: 'Blue, Black', price: '75', pictureUrl: [DollarGelPen] },
+      { id: '6', name: 'Dollar Pointer', description: '10 diff: colors pack', price: '330', pictureUrl: [Dollar10Pointers]},
     ],
   },
   {
@@ -67,7 +78,7 @@ const products = [
     category: 'Markers / Highlighters',
     id: 'markers-highlighters',
     items: [
-      { id: '1', name: 'Dollar Marker', description: 'Black, Blue, Green', price: '20', pictureUrl: 'https://example.com/images/dollar_marker.jpg' },
+      { id: '1', name: 'Dollar Marker', description: 'Black, Blue, Green', price: '20', pictureUrl: [DollarMarker] },
       { id: '2', name: 'Piano Marker', description: 'Black, Blue', price: '20', pictureUrl: 'https://example.com/images/piano_marker.jpg' },
       { id: '3', name: 'Cut Marker', description: 'Black, Blue', price: '15', pictureUrl: 'https://example.com/images/cut_marker.jpg' },
       { id: '4', name: 'Dollar Neon Highlighter', description: 'Yellow, Pink', price: '50', pictureUrl: 'https://example.com/images/neon_highlighter.jpg' },
