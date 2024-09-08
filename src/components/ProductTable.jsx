@@ -1,44 +1,88 @@
-
-import React, { useState } from 'react';
 import styles from './ProductTable.module.css';
 
-
+/*Pictures*/
+//ROUGH REGISTERS
 import ringrough from './Pictures/100RingRoughRegister.jpg';
 import ringrough180 from './Pictures/RingRoughRegister2.jpg';
 import NonRingRoughRegister150 from './Pictures/NonRingRoughRegister150.jpg';
 import NonRingRoughRegister210 from './Pictures/NonRingRoughRegister210.jpg';
+//NEAT REGISTERS
 import P5 from './Pictures/P5.RingNeatRegister.jpg';
 import P6 from './Pictures/P6.RingNeatRegister.jpg';
+import A5 from './Pictures/A5NeatPageRegister.jpg';
+import A6 from './Pictures/A6NeatPageRegister.jpg';
+//POINTERS/ BALLPOINTS
 import PianoPen from './Pictures/PianoPen.jpg';
 import SignaturePen from './Pictures/SignaturPen.jpg';
 import DollarPen from './Pictures/DollarBallPen.jpg';
 import DollarPointer from './Pictures/DollarPointer.jpg';
-import DollarGelPen from './Pictures/DollarGelPen.jpg'
-import Dollar10Pointers from './Pictures/10DollarPointers.jpg'
-//paper
-//paper
-//paper
+import DollarGelPen from './Pictures/DollarGelPen.jpg';
+import Dollar10Pointers from './Pictures/10DollarPointers.jpg';
 
-import DollarMarker from './Pictures/DollarMarker.jpg'
+//PAPERS
+import A4WhitePages from './Pictures/A4WhitePages.jpg';
+//1;
+import NarrowLineSheets from './Pictures/NarrowLineSheets.jpg';
+
+//MARKERS
+import DollarMarker from './Pictures/DollarMarker.jpg';
+import DollarNeonMarker from './Pictures/DollarNeonMarker.jpg';
+//TAPES
+
+import OsakaTape from './Pictures/OsakaTape.jpg';
+import TransparentTape1 from './Pictures/TransparentTape1.jpg';
+import TransparentTape2 from './Pictures/TransparentTape2.jpg';
+// import OsakaTape from './Pictures/OsakaTape.jpg';
 
 
 
-import Calc417 from './Pictures/417.CasioCalculator.jpg'
-import Calc552 from './Pictures/552.CasioCalculator.jpg'
-// import P5 from './Pictures/P5.RingNeatRegister.jpg'
-// import P5 from './Pictures/P5.RingNeatRegister.jpg'
-// import P5 from './Pictures/P5.RingNeatRegister.jpg'
-// import P5 from './Pictures/P5.RingNeatRegister.jpg'
+//PLASTIC FILES
+//1
+//2
+
+
+//RULERS
+//1
+//2
+
+
+//DRAWING RELATED
+//1
+//2
+//3
+
+//CALCULATORS
+//1
+import Calc417 from './Pictures/417.CasioCalculator.jpg';
+import Calc552 from './Pictures/552.CasioCalculator.jpg';
+
+//SPORTS
+//1
+//2
+//3
+
+//OTHERS
+// import P5 from './Pictures/RingNeatRegister.jpg';
+// import P5 from './Pictures/RingNeatRegister.jpg';
+// import P5 from './Pictures/RingNeatRegister.jpg';
+// import P5 from './Pictures/RingNeatRegister.jpg';
+// import P5 from './Pictures/RingNeatRegister.jpg';
+// import P5 from './Pictures/RingNeatRegister.jpg';
+// import P5 from './Pictures/RingNeatRegister.jpg';
+// import P5 from './Pictures/RingNeatRegister.jpg';
+
+
 const products = [
   {
     category: 'Rough Pages Registers',
     id: 'rough-pages-registers',
     items: [
       { id: '1', name: 'Ring Register', description: '~100 pages', price: '230', pictureUrl: [ringrough] },
-      { id: '2', name: 'Ring Register', description: '~180 pages', price: '360', pictureUrl:[ringrough180] },
-      { id: '3', name: 'Non-Ring Register', description: '~150 pages', price: '250', pictureUrl:[NonRingRoughRegister150] },
+      { id: '2', name: 'Ring Register', description: '~180 pages', price: '360', pictureUrl: [ringrough180] },
+      { id: '3', name: 'Non-Ring Register', description: '~150 pages', price: '250', pictureUrl: [NonRingRoughRegister150] },
 
-      { id: '4', name: 'Non-Ring Register', description: '~210 pages', price: '360', pictureUrl: [NonRingRoughRegister210 ],
+      {
+        id: '4', name: 'Non-Ring Register', description: '~210 pages', price: '360', pictureUrl: [NonRingRoughRegister210],
         // customClass: 'specific-class',
       }
     ],
@@ -47,10 +91,13 @@ const products = [
     category: 'Neat Pages Registers',
     id: 'neat-pages-registers',
     items: [
-      { id: '1', name: 'Ring Register', description: '5 Portions/Subjects', price: '400', pictureUrl: [P5]},
-      { id: '2', name: 'Ring Register', description: '6 Portions/Subjects', price: '450 ', pictureUrl:[ P6 ],
+      { id: '1', name: 'Ring Register', description: '5 Portions/Subjects', price: '400', pictureUrl: [P5] },
+      {
+        id: '2', name: 'Ring Register', description: '6 Portions/Subjects', price: '450 ', pictureUrl: [P6],
         // customClass: 'soldClass',
       },
+      { id: '3', name: 'NotePad', description: 'A5 (1/2 of A4)', price: '150', pictureUrl: [A5] },
+      { id: '4', name: 'NotePad', description: 'A6 (1/4 of A4)', price: '70', pictureUrl: [A6] },
     ],
   },
   {
@@ -62,16 +109,16 @@ const products = [
       { id: '3', name: 'Dollar Ball Pen', description: 'Black, Blue', price: '30', pictureUrl: [DollarPen] },
       { id: '4', name: 'Dollar Pointer', description: 'Blue, Black, Turquoise', price: '30', pictureUrl: [DollarPointer] },
       { id: '5', name: 'Dollar Gel Pen', description: 'Blue, Black', price: '75', pictureUrl: [DollarGelPen] },
-      { id: '6', name: 'Dollar Pointer', description: '10 diff: colors pack', price: '330', pictureUrl: [Dollar10Pointers]},
+      { id: '6', name: 'Dollar Pointer', description: '10 diff: colors pack', price: '330', pictureUrl: [Dollar10Pointers] },
     ],
   },
   {
     category: 'Pages / Sheets',
     id: 'pages-sheets',
     items: [
-      { id: '1', name: 'A4 Size Paper', description: '70 GSM / White', price: '4', pictureUrl: 'https://example.com/images/a4_paper.jpg' },
+      { id: '1', name: 'A4 Size Paper', description: '70 GSM / White', price: '4', pictureUrl: [A4WhitePages] },
       { id: '2', name: 'Legal Size Paper', description: '70 GSM / White', price: '6', pictureUrl: 'https://example.com/images/legal_paper.jpg' },
-      { id: '3', name: 'Narrow Line Sheets', description: 'Base/Medium/Neat', price: '60 / 110 / 140', pictureUrl: 'https://example.com/images/narrow_line_sheets.jpg' },
+      { id: '3', name: 'Narrow Line Sheets', description: 'Base/Medium/Neat', price: '100 / 110 / 140', pictureUrl: [NarrowLineSheets] },
     ],
   },
   {
@@ -79,18 +126,16 @@ const products = [
     id: 'markers-highlighters',
     items: [
       { id: '1', name: 'Dollar Marker', description: 'Black, Blue, Green', price: '20', pictureUrl: [DollarMarker] },
-      { id: '2', name: 'Piano Marker', description: 'Black, Blue', price: '20', pictureUrl: 'https://example.com/images/piano_marker.jpg' },
-      { id: '3', name: 'Cut Marker', description: 'Black, Blue', price: '15', pictureUrl: 'https://example.com/images/cut_marker.jpg' },
-      { id: '4', name: 'Dollar Neon Highlighter', description: 'Yellow, Pink', price: '50', pictureUrl: 'https://example.com/images/neon_highlighter.jpg' },
+      { id: '2', name: 'Dollar Neon Highlighter', description: 'Yellow, Pink', price: '50', pictureUrl: [DollarNeonMarker] },
     ],
   },
   {
     category: 'Tapes',
     id: 'tapes',
     items: [
-      { id: '1', name: 'OSAKA Tape', description: 'White / 10-gazz', price: '70', pictureUrl: 'https://example.com/images/osaka_tape.jpg' },
-      { id: '2', name: 'Transparent Tape', description: 'Thickness: 1 inch', price: '150', pictureUrl: 'https://example.com/images/transparent_tape_1inch.jpg' },
-      { id: '3', name: 'Transparent Tape', description: 'Thickness: 2 inch', price: '250', pictureUrl: 'https://example.com/images/transparent_tape_2inch.jpg' },
+      { id: '1', name: 'OSAKA Tape', description: 'White / 10-gazz', price: '70', pictureUrl: [OsakaTape] },
+      { id: '2', name: 'Transparent Squash Tape', description: 'Thickness: 1 inch', price: '150', pictureUrl: [TransparentTape1] },
+      { id: '3', name: 'Transparent Squash Tape', description: 'Thickness: 2 inch', price: '250', pictureUrl: [TransparentTape2] },
       { id: '4', name: 'Transparent Tape', description: 'Thickness: 0.75 inch / 30 yards', price: '40', pictureUrl: 'https://example.com/images/transparent_tape_075inch.jpg' },
     ],
   },
@@ -124,9 +169,10 @@ const products = [
     id: 'calculators',
     items: [
       { id: '1', name: 'Casio 555 Functions Calculator', description: 'fx-991EX', price: '2500', pictureUrl: 'https://example.com/images/casio_555_calculator.jpg' },
-      { id: '2', name: 'Casio 552 Functions Calculator', description: 'fx-991EX', price: '2400', pictureUrl: [Calc552],
+      {
+        id: '2', name: 'Casio 552 Functions Calculator', description: 'fx-991EX', price: '2400', pictureUrl: [Calc552],
         // customClass: 'soldClass',
-       },
+      },
       { id: '3', name: 'Casio 417 Functions Calculator', description: 'fx-991ES', price: '1650', pictureUrl: [Calc417] },
     ],
   },
@@ -139,10 +185,10 @@ const products = [
       { id: '3', name: 'Badminton Shuttle', description: 'Ghafoor Champion', price: '350', pictureUrl: 'https://example.com/images/badminton_shuttle.jpg' },
     ],
   },
-  
+
   {
     category: 'Others',
-    id:'others',
+    id: 'others',
     items: [
       { id: 1, name: 'Correction Pen', description: '(Whito)', price: '60', pictureUrl: 'https://example.com/images/correction_pen.jpg' },
       { id: 2, name: 'Sticky Notes', description: '3x3 inch, 100 pcs, (Multicolor)', price: '100', pictureUrl: 'https://example.com/images/sticky_notes.jpg' },
@@ -151,10 +197,84 @@ const products = [
       { id: 5, name: 'Scissor', description: 'Normal Quality', price: '60', pictureUrl: 'https://example.com/images/scissor.jpg' },
       { id: 6, name: 'Glue Stick', description: 'Company: Nafees', price: '70', pictureUrl: 'https://example.com/images/scissor.jpg' },
       { id: 7, name: 'Elfy', description: 'GMSA', price: '30', pictureUrl: 'https://example.com/images/scissor.jpg' },
-      { id: 8, name: 'Metallic Pen Holder', description: 'High Quality', price: '400' , pictureUrl: 'https://example.com/images/scissor.jpg'},
+      { id: 8, name: 'Metallic Pen Holder', description: 'High Quality', price: '400', pictureUrl: 'https://example.com/images/scissor.jpg' },
     ],
   },
 ];
+
+// const ProductTable = ({ selectedCategory }) => {
+//   const filteredProducts = selectedCategory === 'all'
+//     ? products
+//     : products.filter(category => category.id === selectedCategory);
+
+//   const generateWhatsAppLink = (name, price, customClass) => {
+//     const numericPrice = price.split(' ')[0]; // Extract numeric price
+//     const message = `I want to buy ${name} with price ${numericPrice} PKR`;
+
+//     let whatsappNumber = '923183098174'; // Default WhatsApp number
+
+//     if (customClass === 'specific-class') {
+//       whatsappNumber = '923001234567'; // Specific WhatsApp number based on class
+//     }
+
+//     return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+//   };
+
+//   return (
+//     <div className={styles.tableContainer}>
+//       {filteredProducts.map((category, index) => (
+//         <div key={index} id={category.id}>
+//           <h2 className={styles.heading}>{category.category}</h2>
+//           <table className={`table table-striped ${styles.table}`}>
+//             <thead>
+//               <tr>
+//                 <th className={styles.head}>S/No</th>
+//                 <th className={styles.head}>Items</th>
+//                 <th className={styles.head}>Description</th>
+//                 <th className={styles.head}>Price</th>
+//                 <th className={styles.head}>Action</th>
+//                 <th className={styles.head}>Picture</th>
+//               </tr>
+//             </thead>
+//             <tbody>
+//               {category.items.map(item => (
+//                 <tr key={item.id}>
+//                   <td>{item.id}</td>
+//                   <td>{item.name}</td>
+//                   <td>{item.description}</td>
+//                   <td>{item.price}</td>
+//                   <td>
+//                     <a
+//                       href={generateWhatsAppLink(item.name, item.price, item.customClass)}
+//                       target="_blank"
+//                       className={`${styles.btn} ${item.customClass}`}
+//                     >
+//                       Buy
+//                     </a>
+//                   </td>
+//                   <td>
+//                     <a
+//                       href={item.pictureUrl}
+//                       target="_blank"
+//                       rel="noopener noreferrer"
+//                       className={styles.btn}
+//                     >
+//                       Picture
+//                     </a>
+//                   </td>
+//                 </tr>
+//               ))}
+//             </tbody>
+//           </table>
+//           <hr style={{ border: '2px solid black', marginBottom: '20px' }} />
+//         </div>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default ProductTable;
+
 
 const ProductTable = ({ selectedCategory }) => {
   // Filter products based on the selected category
@@ -250,4 +370,4 @@ const ProductTable = ({ selectedCategory }) => {
   );
 };
 
-export default ProductTable;
+export default ProductTable;  

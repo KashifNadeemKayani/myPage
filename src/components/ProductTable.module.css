@@ -126,11 +126,11 @@
 
 .table {
   width: 100%;
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
 }
 
 .heading {
-  font-size: 24px;
+  font-size: 24x;
   margin: 10px 0;
 }
 
