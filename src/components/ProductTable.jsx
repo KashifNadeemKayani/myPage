@@ -32,27 +32,26 @@ import DollarNeonMarker from './Pictures/DollarNeonMarker.jpg';
 import OsakaTape from './Pictures/OsakaTape.jpg';
 import TransparentTape1 from './Pictures/TransparentTape1.jpg';
 import TransparentTape2 from './Pictures/TransparentTape2.jpg';
-// import OsakaTape from './Pictures/OsakaTape.jpg';
+import NonTransparentTape175 from './Pictures/NonTransparentTape1.75.jpg';
+import TransparentTape075 from './Pictures/TransparentTape075.jpg';
 
 
 
 //PLASTIC FILES
-//1
-//2
+import ButtonFiles from './Pictures/ButtonFiles.jpg';
+import AssignmentFiles from './Pictures/AssignmentFiles.jpg';
 
 
 //RULERS
-//1
-//2
-
+import PlasticRulers from './Pictures/PlasticRulers.jpg';
+import StainlessSteel from './Pictures/StainlessSteel.jpg';
 
 //DRAWING RELATED
-//1
-//2
-//3
+import Pencil from './Pictures/Pencil.jpg';
+import Eraser from './Pictures/Eraser.jpg';
+import Sharpner from './Pictures/Sharpner.jpg';
 
 //CALCULATORS
-//1
 import Calc417 from './Pictures/417.CasioCalculator.jpg';
 import Calc552 from './Pictures/552.CasioCalculator.jpg';
 
@@ -136,44 +135,44 @@ const products = [
       { id: '1', name: 'OSAKA Tape', description: 'White / 10-gazz', price: '70', pictureUrl: [OsakaTape] },
       { id: '2', name: 'Transparent Squash Tape', description: 'Thickness: 1 inch', price: '150', pictureUrl: [TransparentTape1] },
       { id: '3', name: 'Transparent Squash Tape', description: 'Thickness: 2 inch', price: '250', pictureUrl: [TransparentTape2] },
-      { id: '4', name: 'Transparent Tape', description: 'Thickness: 0.75 inch / 30 yards', price: '40', pictureUrl: 'https://example.com/images/transparent_tape_075inch.jpg' },
+      { id: '4', name: 'Non-Transparent Squash Tape', description: 'Thickness: 1.75 inch', price: '200', pictureUrl: [NonTransparentTape175] },
+      { id: '5', name: 'Transparent Tape', description: 'Thickness: 0.75 inch / 30 yards', price: '40', pictureUrl: [TransparentTape075]},
     ],
   },
   {
     category: 'Plastic Files',
     id: 'plastic-files',
     items: [
-      { id: '1', name: 'Button File', description: 'Color: Green', price: '40', pictureUrl: 'https://example.com/images/button_file_green.jpg' },
-      { id: '2', name: 'Assignment File', description: 'Stick files', price: '40', pictureUrl: 'https://example.com/images/assignment_file.jpg' },
+      { id: '1', name: 'Button File', description: 'Color: Green', price: '40', pictureUrl: [ButtonFiles] },
+      { id: '2', name: 'Assignment File', description: 'Stick files', price: '40', pictureUrl: [AssignmentFiles] },
     ],
   },
   {
     category: 'Rulers',
     id: 'rulers',
     items: [
-      { id: '1', name: 'Plastic Ruler', description: '15/20/30 cm', price: '30/50/60', pictureUrl: 'https://example.com/images/plastic_ruler.jpg' },
-      { id: '2', name: 'Stainless Steel Ruler', description: '30 cm (High Quality)', price: '120', pictureUrl: 'https://example.com/images/steel_ruler.jpg' },
+      { id: '1', name: 'Plastic Ruler', description: '15/20/30 cm', price: '30/50/60', pictureUrl: [PlasticRulers] },
+      { id: '2', name: 'Stainless Steel Ruler', description: '30 cm (High Quality)', price: '120', pictureUrl: [StainlessSteel] },
     ],
   },
   {
     category: 'Drawing Related',
     id: 'drawing-related',
     items: [
-      { id: '1', name: 'Pencil', description: 'Dollar', price: '20', pictureUrl: 'https://example.com/images/pencil.jpg' },
-      { id: '2', name: 'Eraser', description: 'White', price: '15', pictureUrl: 'https://example.com/images/eraser.jpg' },
-      { id: '3', name: 'Sharpener', description: 'Dux High Quality', price: '20', pictureUrl: 'https://example.com/images/sharpener.jpg' },
+      { id: '1', name: 'Pencil', description: 'Dollar', price: '20', pictureUrl:[Pencil] },
+      { id: '2', name: 'Eraser', description: 'White', price: '15', pictureUrl: [Eraser] },
+      { id: '3', name: 'Sharpener', description: 'Dux High Quality', price: '20', pictureUrl: [Sharpner]},
     ],
   },
   {
     category: 'Calculators',
     id: 'calculators',
     items: [
-      { id: '1', name: 'Casio 555 Functions Calculator', description: 'fx-991EX', price: '2500', pictureUrl: 'https://example.com/images/casio_555_calculator.jpg' },
       {
-        id: '2', name: 'Casio 552 Functions Calculator', description: 'fx-991EX', price: '2400', pictureUrl: [Calc552],
+        id: '1', name: 'Casio 552 Functions Calculator', description: 'fx-991EX', price: '2400', pictureUrl: [Calc552],
         // customClass: 'soldClass',
       },
-      { id: '3', name: 'Casio 417 Functions Calculator', description: 'fx-991ES', price: '1650', pictureUrl: [Calc417] },
+      { id: '2', name: 'Casio 417 Functions Calculator', description: 'fx-991ES', price: '1650', pictureUrl: [Calc417] },
     ],
   },
   {
