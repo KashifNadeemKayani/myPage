@@ -10,7 +10,8 @@
   position: sticky; /* Stick to the top of the viewport */
   top: 0; /* Stick to the top of the page */
   background-color: white; /* Background to avoid transparency issues */
-  z-index: 1000; /* Ensure it stays above other content */
+  /* z-index: 1000;  */
+  /* Ensure it stays above other content */
 }
 
 /* Button styling */
